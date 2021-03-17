@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  server:
+    image: nshop-server
+    ports:
+      - "8000:8000"
+    depends_on: 
+      - mongo
+      - redis
+    networks: 
+      - mern-app
+  mongo:
+    image: mongo:3.6.22-xenial
+    ports:
+      - "27017:27017"
+    networks: 
+      - mern-app
+    volumes: 
+      - mongo-data:/data/db
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks: 
+      - mern-app
+    volumes: 
+      - mongo-data:/data/redis
+  client:
+    image: nshop-client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    networks: 
+      - mern-app
+networks: 
+  mern-app:
+    driver: bridge
+volumes: 
+  mongo-data:
+    driver: local

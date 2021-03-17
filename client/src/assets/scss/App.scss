@@ -1,0 +1,112 @@
+@import "scss/fontawesome.scss";
+@import "scss/solid.scss";
+@import "scss/duotone.scss";
+@import "scss/light.scss";
+@import "scss/brands.scss";
+@import "fonts/";
+// @import "~aos/dist/aos.css";
+
+.bg-white {
+  background-color: white;
+}
+
+body {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+}
+
+.mr-2 {
+  margin-right: 0.5em;
+}
+
+.flex {
+  display: flex;
+  // margin: 8px 0;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.between {
+  justify-content: space-between;
+  align-items: center;
+}
+.end {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.m8 {
+  margin: 8px 0;
+}
+
+.empty-div {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-cate {
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    // box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+// BADGE
+.badge {
+  margin: 0;
+  padding: 0;
+  color: white;
+  padding: 10px 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: normal;
+  text-transform: uppercase;
+  background: #ed1b24;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -ms-transform: translateX(30%) translateY(0%) rotate(-45deg);
+  -webkit-transform: translateX(30%) translateY(0%) rotate(-45deg);
+  transform: translateX(30%) translateY(0%) rotate(-45deg);
+  -ms-transform-origin: bottom left;
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.badge::before,
+.badge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  margin: 0 -1px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  min-width: 55px;
+}
+
+.badge::before {
+  right: 100%;
+}
+
+.badge::after {
+  left: 100%;
+}
