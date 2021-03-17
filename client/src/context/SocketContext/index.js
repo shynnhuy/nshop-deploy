@@ -3,7 +3,7 @@ import SocketContext from "./context";
 import * as io from "socket.io-client";
 
 const SocketProvider = (props) => {
-  const endpoint = "http://localhost:8000";
+  const endpoint = process.env.NODE_ENV === "development" ? "http://localhost:8000" : "/";
 
   let Socket = {
     connect,
